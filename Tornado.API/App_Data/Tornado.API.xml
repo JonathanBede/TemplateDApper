@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tornado.API</name>
+    </assembly>
+    <members>
+        <member name="T:Tornado.API.Controllers.GameController">
+            <summary>
+            Game
+            </summary>
+        </member>
+        <member name="M:Tornado.API.Controllers.GameController.#ctor(Tornado.Logic.Interfaces.Api.IGameLogic)">
+            <summary>
+            Games
+            </summary>
+            <param name="logic"></param>
+        </member>
+        <member name="M:Tornado.API.Controllers.GameController.GetAll">
+            <summary>
+            Gets all the games for an app
+            </summary>
+            <remarks>This end point wil return all of the games</remarks>
+            <response code="400">Bad request</response>
+            <response code="401">Unauthorized</response>
+            <response code="404">Not found</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Tornado.API.Controllers.GameController.Get(System.Guid)">
+            <summary>
+            Gets the game
+            </summary>
+            <remarks>This will return a game for an app</remarks>
+            <param name="id">The ID of the value you want to return</param>
+            <response code="400">Bad request</response>
+            <response code="401">Unauthorized</response>
+            <response code="404">Not found</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="T:Tornado.API.Models.Game">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Tornado.API.Models.Game.Id">
+            <summary>
+            Unique identifier
+            </summary>
+        </member>
+        <member name="P:Tornado.API.Models.Game.Description">
+            <summary>
+            A description of the game
+            </summary>
+        </member>
+        <member name="P:Tornado.API.Models.Game.Type">
+            <summary>
+            The type of game
+            </summary>
+        </member>
+        <member name="P:Tornado.API.Models.Game.PercentBandMin">
+            <summary>
+            (Lower band i.e. 40%) if success rate for a word in a round is below this percentage then it will be added ‘AddWordsBand1’ times to next round
+            </summary>
+        </member>
+        <member name="P:Tornado.API.Models.Game.PercentBandMax">
+            <summary>
+            (Upper band i.e. 80%) if success rate for a word in a round is below this percentage (and above ‘PercentBand1’) then it will be added ‘AddWordsBand1’ times to next round
+            </summary>
+        </member>
+        <member name="P:Tornado.API.Models.Game.AddWordsBand1">
+            <summary>
+            Number of times a word is added to the next game if success rate is below PercentBand1 i.e. ‘2’
+            </summary>
+        </member>
+        <member name="P:Tornado.API.Models.Game.AddWordsBand2">
+            <summary>
+            Number of times a word is added to the next game if success rate is below PercentBand2 (but above PercentBand2) i.e. ‘1’
+            </summary>
+        </member>
+        <member name="P:Tornado.API.Models.Game.ReEnterPositionMin">
+            <summary>
+            Lower limit of range in queue to re-insert failed words
+            </summary>
+        </member>
+        <member name="P:Tornado.API.Models.Game.ReEnterPositionMax">
+            <summary>
+            Upper limit of range in queue to re-insert failed words
+            </summary>
+        </member>
+    </members>
+</doc>
